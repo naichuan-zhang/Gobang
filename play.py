@@ -24,7 +24,7 @@ def play():
             show_board()
         else:
             print("\033[31m*** Invalid coords! Please try again! ***\033[0m")
-        check_win()
+        check_win(x, y)
 
 
 def swap_player():
