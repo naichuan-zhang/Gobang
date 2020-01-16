@@ -1,6 +1,6 @@
 import variables
 from board import show_board, update_board
-from win import check_win
+from win import check_win, win
 
 
 def play():
@@ -20,11 +20,14 @@ def play():
             if flag == 0:
                 print("\033[31m****** The place has been taken! Please try again! \033[0m")
                 continue
+            f = check_win(x, y)
+            if f == 1:
+                win()
+                break
             swap_player()
             show_board()
         else:
             print("\033[31m*** Invalid coords! Please try again! ***\033[0m")
-        check_win(x, y)
 
 
 def swap_player():
